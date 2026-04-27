@@ -1,0 +1,34 @@
+
+[mgr]
+prepend_keymap = [
+	{ on = "<Esc>",    run = "escape",            		desc = "Quit the application" },
+	{ on = "<C-h>",    run = "hidden toggle",               desc = "Toggle visibility of hidden files" },
+	{ on = "<C-Down>", run = "arrow 5",                     desc = "Move cursor up half page" },
+	{ on = "<C-Up>",   run = "arrow -5",                    desc = "Move cursor down half page" },
+	{ on = "<Tab>",    run = "spot",                        desc = "Spot hovered file" },
+	{ on = "<r>",    run = "rename --cursor=before_ext",  desc = "Rename selected file(s)" },
+	{ on = "<n>",    run = "create",                      desc = "Create a file (ends with / for directories)" },
+	{ on = "<c>",    run = "yank",                        desc = "Yank selected files (copy)" },
+	{ on = "<x>",    run = "yank --cut",                  desc = "Yank selected files (cut)" },
+	{ on = "<v>",    run = "paste",                       desc = "Paste yanked files" },
+	{ on = "<V>",    run = "paste --force",               desc = "Paste yanked files (overwrite if the destination exists)" },
+	{ on = "<s>",    run = "unyank",                      desc = "Cancel the yank status" },
+	{ on = "<w>",    run = "close", 			desc = "close everything"},
+	{ on = "<t>",    run = "tab_create --current", 	desc = "Create a new tab with CWD" },
+]
+[tasks]
+
+[spot]
+
+[pick]
+
+[input]
+prepend_keymap = [
+	{ on = "<Esc>", run = "close", desc = "Close the input" },
+]
+
+[confirm]
+
+[cmp]
+
+[help]

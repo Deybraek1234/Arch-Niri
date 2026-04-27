@@ -1,0 +1,194 @@
+{	"reload_style_on_change":true,
+	"layer": "top",
+	"position": "top",
+	"height": 30,
+	"modules-left": [
+		"idle_inhibitor",
+		"battery",
+		"network",
+		"bluetooth",
+		"group/hardware",
+		"network#net2",
+	],
+
+	"modules-center": [
+		"hyprland/window",	],
+
+	"modules-right": [
+		"hyprland/workspaces",
+		"custom/space",
+		"clock",
+		"custom/space",
+		"pulseaudio#sink",
+		"pulseaudio/slider",
+		"custom/space",
+		"hyprland/submap"
+	],
+
+	"hyprland/workspaces": {
+		"active-only": false,
+		"all-outputs": true,
+		"on-scroll-up": "hyprctl dispatch workspace -1",
+		"on-scroll-down": "hyprctl dispatch workspace +1",
+		"format": "{name}",
+		"on-click": "activate",
+		"height": 0
+	},
+
+      "wlr/taskbar": {
+      "icon-size": 23,
+      "on-click": "activate",
+      "format": "{icon}"
+      },	
+
+	"clock": {
+	"format": "{:%a, %b %d %H:%M}",
+    "interval": 60,
+    "tooltip": false
+  }, 
+
+	"network": {
+		"interval": 2.5,
+		"format": "{icon}{essid}",
+		"format-wifi": " {icon}  {essid} ",
+		"format-ethernet": "{ifname}",
+		"format-disconnected": "󰤫  Disconnected",
+		"format-disabled": "󰤭 Disabled",
+		"max-length": 50,
+		"on-click": "kitty --class impala impala",
+		"format-icons": [
+			"󰤯 ",
+			"󰤟 ",
+			"󰤢 ",
+			"󰤥",
+			"󰤨"
+		]
+	},
+
+	"hyprland/submap":{
+		"format": "  ",	
+		"always-on":true,	
+		"tooltip": "Notification Center",
+		"on-click":"$HOME/scripts/mako_history.sh",
+		"interval" : 3600
+	},
+
+	"network#net2": {
+		"interval": 2,
+		"format": "<span></span>{bandwidthUpBytes:>}  <span></span>{bandwidthDownBytes:>}"
+	},
+
+	"custom/space": {
+		"format": "<span>  </span>"
+	},
+	
+	"pulseaudio/slider": {
+		"min": 0,
+		"max": 100,
+		"orientation": "horizontal"
+	},
+
+	"pulseaudio#sink": {
+		"format": "{icon}",
+		"format-bluetooth": "{icon} ",
+		"format-muted": "󰝟 ",
+		"format-icons": {
+			"headphone": "󰋋",
+			"hands-free": "󱡏",
+			"headset": "󰋎",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"󰖀",
+				"󰕾"
+			]
+		},
+		"ignored-sinks": [
+			"Easy Effects Sink"
+		],
+		"smooth-scrolling-threshold": "4",
+		"scroll-step": "5",
+		"on-click-middle": "pactl set-default-sink $(pactl list short sinks | awk '{print $2}' | sed '/easyeffects_sink/d' | sed \"/$(pactl get-default-sink)/d\" | tofi --prompt-text \" \" --height 118 --width 480 --anchor bottom-right --margin-right 80 --margin-bottom 50 --auto-accept-single true )",
+		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+		"on-click": "pkill pavucontrol; pavucontrol",
+		"on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 2.0",
+		"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 2.0"
+	},
+
+	"group/hardware":{
+		"orientation":"inherit",
+		"drawer":{
+			"transition-duration":600,
+			"transition-right-to-left": true,
+		},
+		"modules":[
+			"custom/expand",
+			"cpu",
+			"memory",
+			"disk",
+			"temperature"
+		]
+	},
+	"custom/expand":{
+		"format":"<span> <big> 󰇙 </big> </span>",
+		"tooltip":false,
+	},
+	"cpu":{
+		"interval":5,
+		"format": "   {usage}% |",
+		"tooltip-format":"{load}%"
+	},
+
+	"memory":{
+		"format":"󰕳  {percentage}% |",
+		"tooltip-format":"{percentage}% Used:{used} Available: {avail}"
+	},
+
+	"disk":{
+		"format":"  {free} |",
+		"tooltip-format":"Used:{percentage_used}% Free:{percentage_free}%"
+	},
+
+	"temperature":{
+		"format":"  {temperatureC}°C |"
+	},
+
+	"bluetooth":{
+		"format":"{icon}󰂯",
+		"format-disabled":"{icon}󰂲",
+		"format-connected":"{icon}󰂱 {device_alias}",
+		"tooltip-format-connected":"{device_alias} {device_battery_percentage}%",
+		"tooltip-format-off":"Bluetooth Disabled",
+		"tooltip-format-on":"Bluetooth Enabled",
+		"on-click": "rfkill toggle bluetooth",
+  		"on-click-right": "blueman-manager"
+	},
+
+	"battery":{
+		"interval":5,
+		"states":{
+			"good": 95,
+			"warning": 25,
+			"critical": 15,
+		},
+		"format":"{icon}   {capacity}%",
+		"format-charging":"󰂄 {capacity}%",
+	},
+
+	"idle_inhibitor":{
+		"format":"<big>  </big>",
+		"timeout":120.0,
+		"tooltip":false
+	},
+
+	"hyprland/window": {
+		"format":"  {}  ",
+		"icon":false,
+		"rewrite":{
+			"Spotify Free":"Spotify"
+		},
+		"format-empty":":)"
+}
+}
+
