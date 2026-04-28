@@ -6,4 +6,3 @@ vim.opt.backspace = '2'
 vim.opt.showcmd = true
 vim.opt.autoread = true
 vim.opt.number = true
-vim.cmd.colorscheme("portal_ruins")

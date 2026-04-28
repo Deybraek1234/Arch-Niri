@@ -22,7 +22,6 @@
 		"custom/space",
 		"pulseaudio#sink",
 		"pulseaudio/slider",
-		"custom/space",
 		"custom/notification"
 	],
 

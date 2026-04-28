@@ -59,23 +59,20 @@ layout {
 	// WAL_COLORS_START
 focus-ring {
     width 1
-    active-color "#25CCE5"
-    inactive-color "#74A137"
+    active-color "#8B72AE"
+    inactive-color "#96899D"
 }
 
 border {
     off
     width 2
-    active-color "#25CCE5"
-    inactive-color "#04050C"
+    active-color "#8B72AE"
+    inactive-color "#020005"
 }
 // WAL_COLORS_END
 }
 
-spawn-at-startup "dbus-activation-environment" "--systemd" "--all"
-spawn-at-startup "systemctl" "--user" "import-environment" "DISPLAY" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
-spawn-at-startup "hash dbus-update-activation-environment" "2>/dev/null"
-spawn-at-startup "bash" "-c" "sleep 2 && /usr/bin/waybar"
+spawn-at-startup "uwsm" "app" "--" "waybar"
 spawn-at-startup "mako"
 spawn-at-startup "awww-daemon"
 spawn-at-startup "sunsetr" 

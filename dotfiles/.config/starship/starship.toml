@@ -1,0 +1,60 @@
+format = """
+[](fg:#6F8CAF)[ ](bg:#6F8CAF fg:#ffffff)$directory[](bg:#5F606A fg:#6F8CAF)$username[](bg:#D73963 fg:#5F606A)$hostname[](fg:#D73963)$cmd_duration$jobs$git_branch$git_metrics$git_status$fill$time$sudo$line_break$character
+"""
+
+command_timeout = 2000
+scan_timeout = 500
+add_newline = true
+
+[character]
+success_symbol = "[λ](bold #554FDA)"
+error_symbol = "[Δ](bold #D73963)"
+
+[directory]
+truncation_length = 3
+truncation_symbol = ".../"
+read_only = "  "
+style = "bg:#6F8CAF fg:#ffffff"
+format = "[ $path ]($style)"
+
+[fill]
+symbol = " "
+
+[cmd_duration]
+min_time = 5
+format = "[   $duration ](bold #ffffff)"
+
+[hostname]
+ssh_only = false
+style = "bg:#D73963 fg:#ffffff"
+format = "[ $hostname ]($style)"
+
+[git_branch]
+style = "fg:#ffffff"
+
+[jobs]
+symbol_threshold = 1
+number_threshold = 2
+symbol = "󱐌"
+format = "[$symbol$number](bold #ffffff)"
+
+[username]
+show_always = true
+style_user = "bg:#5F606A fg:#ffffff"
+style_root = "bg:#202342 fg:#878898"
+format = "[ $user ]($style)"
+
+[time]
+disabled = false
+format = "[$time](#ffffff)"
+use_12hr = true
+time_format = "%T"
+utc_time_offset = "local"
+
+[sudo]
+symbol = " 󰐼 "
+disabled = false
+format = "[$symbol](bold #D73963)"
+
+[line_break]
+disabled = false

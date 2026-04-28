@@ -25,7 +25,7 @@ color_space = "salience"
 # softlight - softlight16 - softlightcomp - softlightcomp16
 # saliencedark - saliencedarkbalanced - saliencedarkdistributed - saliencedarklow (each has the 16 variations)
 # salienceligh - saliencelightbalanced - saliencelightdistributed - saliencelightlow (each has the 16 variations)
-palette = "saliencedark"
+palette = "harddark"
 
 # Ensures a "readable contrast" (OPTIONAL, disabled by default)
 # Should only be enabled when you notice an unreadable contrast frequently happening
@@ -54,6 +54,7 @@ kitty = { template = 'kitty.conf', target = "~/.config/kitty/colors.conf" }
 niri = {template = "colors-niri.sh", target = "~/.config/niri/niri-colors.sh"}
 mako = { template = "colors-mako.sh", target = "~/.config/mako/mako-colors.sh" }
 swaylock = { template = "swaylock.template", target = "~/.config/swaylock/colors" }
+starship = { template = "starship-colors", target = "~/.config/starship/starship-colors" }
 
 [hooks]
 # Run commands when wallust is invoked. Useful to avoid scripting.

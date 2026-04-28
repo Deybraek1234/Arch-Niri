@@ -1,7 +1,8 @@
 if [ $(tty) == "/dev/tty1" ]; then
-	exec uwsm start niri
+	exec uwsm start niri.desktop
 fi
 
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export EDITOR=nvim
 export VISUAL=nvim
 
@@ -20,5 +21,6 @@ HISTFILESIZE=2000
 
 eval "$(thefuck --alias)"
 eval "$(direnv hook bash)"
+eval "$(starship init bash)"
 
 [[ $- != *i* ]] && return
