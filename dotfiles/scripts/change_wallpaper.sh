@@ -11,5 +11,7 @@ cp "$l" /tmp/picture.jpg &
 wallust run "$l" &
 
 ~/scripts/niri.sh
+~/scripts/mako.sh
+~/scripts/swaylock.sh
 
 awww img "$l" --transition-type "wave" --transition-fps 60 --transition-duration 1

@@ -8,44 +8,34 @@
 		"network",
 		"bluetooth",
 		"group/hardware",
-		"network#net2",
+		"network#net2"
 	],
 
 	"modules-center": [
-		"hyprland/window",	],
+		"niri/window"	
+	],
 
 	"modules-right": [
-		"hyprland/workspaces",
+		"niri/workspaces",
 		"custom/space",
 		"clock",
 		"custom/space",
 		"pulseaudio#sink",
 		"pulseaudio/slider",
 		"custom/space",
-		"hyprland/submap"
+		"custom/notification"
 	],
 
-	"hyprland/workspaces": {
-		"active-only": false,
-		"all-outputs": true,
-		"on-scroll-up": "hyprctl dispatch workspace -1",
-		"on-scroll-down": "hyprctl dispatch workspace +1",
-		"format": "{name}",
-		"on-click": "activate",
-		"height": 0
+	"niri/workspaces": {
+		"format": "{icon}",
+		"hide-empty": false
 	},
 
-      "wlr/taskbar": {
-      "icon-size": 23,
-      "on-click": "activate",
-      "format": "{icon}"
-      },	
-
 	"clock": {
-	"format": "{:%a, %b %d %H:%M}",
-    "interval": 60,
-    "tooltip": false
-  }, 
+		"format": "{:%a, %b %H:%M}",
+		"interval": 60,
+		"tooltip": false
+	},
 
 	"network": {
 		"interval": 2.5,
@@ -65,9 +55,8 @@
 		]
 	},
 
-	"hyprland/submap":{
+	"custom/notification":{
 		"format": "  ",	
-		"always-on":true,	
 		"tooltip": "Notification Center",
 		"on-click":"$HOME/scripts/mako_history.sh",
 		"interval" : 3600
@@ -120,7 +109,7 @@
 		"orientation":"inherit",
 		"drawer":{
 			"transition-duration":600,
-			"transition-right-to-left": true,
+			"transition-right-to-left": true
 		},
 		"modules":[
 			"custom/expand",
@@ -132,7 +121,7 @@
 	},
 	"custom/expand":{
 		"format":"<span> <big> 󰇙 </big> </span>",
-		"tooltip":false,
+		"tooltip":false
 	},
 	"cpu":{
 		"interval":5,
@@ -170,10 +159,10 @@
 		"states":{
 			"good": 95,
 			"warning": 25,
-			"critical": 15,
+			"critical": 15
 		},
 		"format":"{icon}   {capacity}%",
-		"format-charging":"󰂄 {capacity}%",
+		"format-charging":"󰂄 {capacity}%"
 	},
 
 	"idle_inhibitor":{
@@ -182,11 +171,12 @@
 		"tooltip":false
 	},
 
-	"hyprland/window": {
+	"niri/window": {
 		"format":"  {}  ",
 		"icon":false,
 		"rewrite":{
-			"Spotify Free":"Spotify"
+			"Spotify Free":"Spotify",
+			"(.*) - bash": "> [$1]"
 		},
 		"format-empty":":)"
 }

@@ -52,6 +52,8 @@ palette = "saliencedark"
 waybar = { template = "waybar-colors.css", target = "~/.config/waybar/waybar-colors.css" }
 kitty = { template = 'kitty.conf', target = "~/.config/kitty/colors.conf" }
 niri = {template = "colors-niri.sh", target = "~/.config/niri/niri-colors.sh"}
+mako = { template = "colors-mako.sh", target = "~/.config/mako/mako-colors.sh" }
+swaylock = { template = "swaylock.template", target = "~/.config/swaylock/colors" }
 
 [hooks]
 # Run commands when wallust is invoked. Useful to avoid scripting.

@@ -1,0 +1,4 @@
+timeout 150 'swaylock -f'
+timeout 151 'niri msg action power-off-monitors'
+timeout 600 'systemctl hibernate'
+before-sleep 'swaylock -f'

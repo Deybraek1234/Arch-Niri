@@ -1,5 +1,5 @@
 if [ $(tty) == "/dev/tty1" ]; then
-	niri
+	exec uwsm start niri
 fi
 
 export EDITOR=nvim
@@ -19,6 +19,6 @@ shopt -s autocd
 HISTFILESIZE=2000
 
 eval "$(thefuck --alias)"
-
+eval "$(direnv hook bash)"
 
 [[ $- != *i* ]] && return

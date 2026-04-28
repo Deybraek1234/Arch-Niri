@@ -91,7 +91,7 @@ padding-right: 4px;
 margin-right: 6px
 }
 
-#custom-swaync {
+#custom-notification {
 margin-right: 10px;
 color:@color4;
 padding-left: 10px;
@@ -121,7 +121,7 @@ min-width: 90px;
 
 /* Style the filled portion of the slider */
 #pulseaudio-slider highlight {
-background-color: @foreground; /* this is the highlight color */
+background-color: @color13; /* this is the highlight color */
 border-radius: 4px;
 }
 
@@ -138,6 +138,8 @@ color:@color4
 
 #window {
 	color:@color4;
+	padding-left: 3px;
+	padding-right: 0px;
   border-radius: 0.5em;
   border-bottom: 1px solid @color5;
 	transition: all 0.3s;
@@ -152,12 +154,4 @@ window#waybar.empty .modules-center{
     background: transparent;
     box-shadow: none;
     transition: all 0.05s ease-in-out;
-}
-
-#submap{
-	color:@color4;
-}
-
-#submap.f-binds {
-	color:@color15;
 }

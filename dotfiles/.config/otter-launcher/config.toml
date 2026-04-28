@@ -1,0 +1,131 @@
+[general]
+default_module = "gg" # module to run when no prefix is matched
+empty_module = "app" # run with an empty prompt
+exec_cmd = "sh -c" # exec command of your shell
+# for example: "bach -c" for bash; "zsh -c" for zsh; also accept wm commands like "hyprctl dispatch exec"
+vi_mode = false # set true to use vi keybinds, false emacs keybinds
+esc_to_abort = true# useful for vi users
+cheatsheet_entry = "?" # when prompted, will show a list of configured modules
+cheatsheet_viewer = "less -R; clear" # command to show cheatsheet; through piping stdout
+clear_screen_after_execution = false
+loop_mode = false # don't quit after executing a module, useful with scratchpads; stderr is hidden in loop mode
+external_editor = "nvim" # if set, press ctrl+x ctrl+ee (or v in vi normal mode) to edit prompt in the specified program
+delay_startup = 0 # sometimes the otter runs too fast even before the terminal window is ready; this slows it down by milliseconds; useful when chafa image is skewed
+#callback = "" # if set, will run after module execution; for example, calling swaymsg to adjust window size
+
+
+# ANSI color codes are allowed. However, \x1b should be replaced with \u001B, because the rust toml crate cannot read \x as an escaped character
+[interface]
+# customized header & list prefix
+header = """
+    ┌ \u001B[1;34m  $USER@$(echo $HOSTNAME) \u001B[0m┐
+    │ \u001B[90m󱎘  \u001B[31m󱎘  \u001B[32m󱎘  \u001B[33m󱎘  \u001B[34m󱎘  \u001B[35m󱎘  \u001B[36m󱎘\u001B[0m   │
+    └ \u001B[36m \u001B[1;36m system\u001B[0m  archlinux  ┘
+    ┌ \u001B[33m \u001B[1;36m window \u001B[0m $XDG_CURRENT_DESKTOP   ┐
+    │ \u001B[31m \u001B[1;36m loads\u001B[0m   $(cat /proc/loadavg | cut -d ' ' -f 1)       │
+    │ \u001B[32m \u001B[1;36m memory\u001B[0m  $(free -h | awk 'FNR == 2 {print $3}')      │
+    │ \u001B[90m\u001B[0m  """
+list_prefix = "    └ \u001B[34m󱓞  "
+selection_prefix = "    └ \u001B[31m󱓞  "
+default_module_message = "    └ \u001B[34m󱓞  \u001B[33msearch\u001B[0m the internet"
+place_holder = "type & search"
+suggestion_mode = "list"
+suggestion_lines = 1
+prefix_color = "\u001B[33m"
+description_color = "\u001B[39m"
+place_holder_color = "\u001B[90m"
+hint_color = "\u001B[90m"
+move_interface_right = 13
+
+[overlay]
+# run a command and print stdout on the overlay layer
+overlay_cmd = """
+cat /etc/otter-launcher/pikachu.example \
+|| echo -e "The file pickachu.example is not found. Pikachu can be at the below blank area. Fix this by modifying the overlay_cmd option in your config file.\n\n"
+"""
+overlay_trimmed_lines = 0 # remove trailing lines from overlay_cmd output
+overlay_height = 0 # set overlay size; 0 to be auto; 1 is one line, 2 two lines, etc; kitty & sixel image size can be determined automatically; others should be set mannually; try modify this whenever you meet issues releated to image height
+move_overlay_right = 0 # move the overlay layer around for theming
+
+# modules are defined as followed
+[[modules]]
+description = "google search"
+prefix = "gg"
+cmd = "xdg-open https://www.google.com/search?q='{}'"
+with_argument = true # if true, {} in cmd will be replaced with user input. if not explicitly set, taken as false.
+url_encode = true # should be true when calling webpages; this ensures special characters in url being readable to browsers; taken as false if not explicitly set
+unbind_proc = true # run cmd in a forked shell as opposed to as a child process (simply by prepending setsid -f to the configured cmd); useful for launching gui programs; taken as false if not explicitly set
+
+[[modules]]
+description = "App launcher (fsel)"
+prefix = "app"
+cmd = "hyprctl dispatch resizeactive 300 300; fsel -d --uwsm"
+move_overlay_down = 1
+with_argument = false
+url_encode = false
+
+[[modules]]
+description = "run commands"
+prefix = "sh"
+cmd = """
+$(printf $TERM | sed 's/xterm-//g') -e sh -c "{}"
+"""
+with_argument = true
+unbind_proc = true
+
+[[modules]]
+description = "search archwiki"
+prefix = "aw"
+cmd = "xdg-open https://wiki.archlinux.org/index.php?search='{}'"
+with_argument = true
+url_encode = true
+unbind_proc = true
+
+[[modules]]
+description = "search packages"
+prefix = "pac"
+cmd = "xdg-open https://archlinux.org/packages/?q='{}'"
+with_argument = true
+url_encode = true
+unbind_proc = true
+
+[[modules]]
+description = "search the AUR"
+prefix = "aur"
+cmd = "xdg-open https://aur.archlinux.org/packages?K='{}'"
+with_argument = true
+url_encode = true
+unbind_proc = true
+
+[[modules]]
+description = "open files (fzf)"
+prefix = "fo"
+cmd = """
+find $HOME -type f -not -path '*/.cache/*' 2>/dev/null | fzf --padding 1,3 --info-command 'printf " files ($FZF_POS/$FZF_TOTAL_COUNT)"' --cycle --gutter ' ' --pointer ' ▌' --color 'bg+:-1,pointer:1,info:8,separator:8,scrollbar:0' --prompt '  ' | setsid -f xargs -r -I [] xdg-open '[]'
+"""
+
+[[modules]]
+description = "open dirs (yazi)"
+prefix = "yz"
+cmd = """
+hyprctl dispatch resizeactive 400 300; yazi $HOME
+"""
+
+[[modules]]
+description = "fastfetch"
+prefix = "ff"
+cmd = "fastfetch; read"
+with_argument = false
+url_encode = false
+
+[[modules]]
+description = "network manager"
+prefix = "nm"
+cmd = "hyprctl dispatch resizeactive 50 300; sleep 0.1; nmtui"
+unbind_proc = true
+
+[[modules]]
+description = "random arch page"
+prefix = "raw"
+cmd = "firefox https://wiki.archlinux.org/title/Special:Random"
+unbind_proc = true

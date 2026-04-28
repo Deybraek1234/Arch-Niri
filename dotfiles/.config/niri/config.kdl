@@ -7,74 +7,80 @@
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
 input {
-    keyboard {
-        xkb {
-            layout "us"
-            variant "dvorak"
-            options "compose:ralt"
-        }
-        repeat-delay 500
-        repeat-rate 25
-    }
+	keyboard {
+		xkb {
+			layout "us"
+			variant "dvorak"
+			options "compose:ralt"
+		}
+		repeat-delay 500
+		repeat-rate 25
+	}
 
-    // Next sections include libinput settings.
-    // Omitting settings disables them, or leaves them at their default values.
-    // All commented-out settings here are examples, not defaults.
-    touchpad {
-        tap
-        scroll-method "two-finger"
-    }
-    touch {
-        map-to-output "eDP-1"
-    }
-    // Focus windows and outputs automatically when moving the mouse into them.
-    // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    focus-follows-mouse max-scroll-amount="0%"
+	// Next sections include libinput settings.
+	// Omitting settings disables them, or leaves them at their default values.
+	// All commented-out settings here are examples, not defaults.
+	touchpad {
+		tap
+		scroll-method "two-finger"
+	}
+	touch {
+		map-to-output "eDP-1"
+	}
+	// Focus windows and outputs automatically when moving the mouse into them.
+	// Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
+	focus-follows-mouse max-scroll-amount="0%"
 }
 
 environment {
-    ELECTRON_OZONE_PLATFORM_HINT "wayland"
+	ELECTRON_OZONE_PLATFORM_HINT "wayland"
 }
 
 output "eDP-1" {
-    mode "1920x1080@120.030"
-    scale 1
-    transform "normal"
-    position x=1280 y=0
+	mode "1920x1080@120.030"
+	scale 1
+	transform "normal"
+	position x=1280 y=0
 }
 
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
-    gaps 5
-    center-focused-column "never"
-    preset-column-widths {
-        proportion 0.33333
-        proportion 0.5
-        proportion 0.66667
-    }
-    preset-window-heights { 
-	proportion 0.5
-	proportion 1.0
-    }
-// WAL_COLORS_START
+	gaps 2
+	center-focused-column "never"
+	preset-column-widths {
+		proportion 0.33333
+		proportion 0.5
+		proportion 0.66667
+	}
+	preset-window-heights { 
+		proportion 0.5
+		proportion 1.0
+	}
+	// WAL_COLORS_START
 focus-ring {
     width 1
-    active-color "#595B71"
-    inactive-color "#747794"
+    active-color "#25CCE5"
+    inactive-color "#74A137"
 }
 
 border {
     off
     width 2
-    active-color "#595B71"
-    inactive-color "#04040A"
+    active-color "#25CCE5"
+    inactive-color "#04050C"
 }
 // WAL_COLORS_END
 }
 
-spawn-at-startup "waybar"
+spawn-at-startup "dbus-activation-environment" "--systemd" "--all"
+spawn-at-startup "systemctl" "--user" "import-environment" "DISPLAY" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
+spawn-at-startup "hash dbus-update-activation-environment" "2>/dev/null"
+spawn-at-startup "bash" "-c" "sleep 2 && /usr/bin/waybar"
 spawn-at-startup "mako"
 spawn-at-startup "awww-daemon"
+spawn-at-startup "sunsetr" 
+spawn-at-startup "iio-niri" "listen" "--monitor" "eDP-1"
+spawn-at-startup "swayidle -w"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -177,8 +183,10 @@ binds {
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     //Mod+Space hotkey-overlay-title="Run an Application: otter-launcher" { spawn-sh "otter-launcher"; }
     Mod+O { spawn "obsidian" "--use-feature=UseOzonePlatform" "--ozone-platform=wayland"; }
-    Mod+Space { spawn "fuzzel"; }
+    Mod+Space { spawn "sh" "-c" "pkill -x fuzzel || fuzzel"; }
     Mod+Shift+B { spawn "code"; }
+    Alt+A {spawn-sh "killall -SIGUSR1 waybar"; }
+    Mod+W {spawn "kitty" "--config" "/home/franci/.config/kitty/kitty.conf" "impala"; }
 
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+B hotkey-overlay-title="Open Firefox" {spawn "firefox"; }
@@ -375,6 +383,7 @@ binds {
     // Mod+Shift+Space { switch-layout "prev"; }
 
     Mod+P { screenshot; }
+    Mod+Ctrl+P { screenshot; }
     Mod+Shift+Ctrl+P { screenshot-screen; }
     Mod+Alt+P { screenshot-window; }
 
