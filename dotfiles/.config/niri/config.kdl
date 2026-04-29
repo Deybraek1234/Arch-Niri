@@ -146,6 +146,22 @@ window-rule {
     draw-border-with-background false
 }
 
+window-rule {
+    match title="terminal filechooser"
+    open-floating true
+
+    default-column-width {fixed 950; }
+    default-window-height { fixed 620; }
+}
+
+window-rule {
+    match title="impala"
+    open-floating true
+    
+    default-column-width { fixed 950; }
+    default-window-height { fixed 620; }
+}
+
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
@@ -177,13 +193,14 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     //Mod+Space hotkey-overlay-title="Run an Application: otter-launcher" { spawn-sh "otter-launcher"; }
+    Mod+E { spawn "kitty" "--title" "yazi" "yazi"; }
     Mod+O { spawn "obsidian" "--use-feature=UseOzonePlatform" "--ozone-platform=wayland"; }
     Mod+Space { spawn "sh" "-c" "pkill -x fuzzel || fuzzel"; }
     Mod+Shift+B { spawn "code"; }
     Alt+A {spawn-sh "killall -SIGUSR1 waybar"; }
-    Mod+W {spawn "kitty" "--config" "/home/franci/.config/kitty/kitty.conf" "impala"; }
+    Mod+W {spawn "kitty" "--title" "impala" "impala"; }
 
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+B hotkey-overlay-title="Open Firefox" {spawn "firefox"; }
