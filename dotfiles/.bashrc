@@ -1,3 +1,5 @@
+[[ $- != *i* ]] && return
+
 if [ $(tty) == "/dev/tty1" ]; then
 	exec uwsm start niri.desktop
 fi
@@ -19,8 +21,6 @@ shopt -s autocd
 
 HISTFILESIZE=2000
 
-eval "$(thefuck --alias)"
-eval "$(direnv hook bash)"
 eval "$(starship init bash)"
+source $HOME/stow/dotfiles/.direnv_init.sh
 
-[[ $- != *i* ]] && return

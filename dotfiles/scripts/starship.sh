@@ -78,7 +78,7 @@ cp "$STARSHIP_CONFIG" "${STARSHIP_CONFIG}.bak"
 
 cat > "$STARSHIP_CONFIG" << TOML
 format = """
-[](fg:${C4})[ ](bg:${C4} fg:#ffffff)\$directory[](bg:${C8} fg:${C4})\$username[](bg:${C6} fg:${C8})\$hostname[](fg:${C6})\$cmd_duration\$jobs\$git_branch\$git_metrics\$git_status\$fill\$time\$sudo\$line_break\$character
+[](fg:${C4})[ ](bg:${C4} fg:#ffffff)\$directory[](bg:${C8} fg:${C4})\$username[](bg:${C6} fg:${C8})\$hostname[](fg:${C6})\$cmd_duration\$jobs\$git_branch\$git_metrics\$git_status\$fill\$time\$line_break\$character
 """
 
 command_timeout = 2000

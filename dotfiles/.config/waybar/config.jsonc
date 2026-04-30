@@ -31,7 +31,7 @@
 	},
 
 	"clock": {
-		"format": "{:%a, %b %H:%M}",
+		"format": "{:%a, %b %d %H:%M}",
 		"interval": 60,
 		"tooltip": false
 	},

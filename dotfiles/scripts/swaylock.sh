@@ -12,6 +12,7 @@ fg=$(strip "$fg")
 c1=$(strip "$color1")
 c2=$(strip "$color2")
 c4=$(strip "$color4")
+c5=$(strip "$color5")
 c8=$(strip "$color8")
 
  
@@ -34,20 +35,20 @@ inside-wrong-color=${c1}cc
 ring-color=${c8}ff
 ring-clear-color=${c2}ff
 ring-ver-color=${c4}ff
-ring-wrong-color=${c1}ff
+ring-wrong-color=${c5}ff
 
 line-color=00000000
 text-color=${fg}ff
 text-clear-color=${c2}ff
 text-ver-color=${c4}ff
-text-wrong-color=${c1}ff
+text-wrong-color=${fg}ff
 
 key-hl-color=${c2}ff
 bs-hl-color=${c1}ff
 separator-color=00000000
 
-indicator-radius=80
-indicator-thickness=8
+indicator-radius=150
+indicator-thickness=15
 ignore-empty-password
 show-failed-attempts
 EOF

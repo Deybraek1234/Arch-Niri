@@ -24,7 +24,7 @@ image_quality = 75
 
 
 [opener]
-wp = [{ run = '/home/franci/scripts/wallpaper_changer.sh "$@"', desc = "Change wallpaper", for = "linux"}]
+wp = [{ run = '/home/franci/scripts/change_wallpaper.sh "$@"', desc = "Change wallpaper", for = "linux"}]
 edit = [{run = 'nvim "$@"', desc = "Neovim", block = true, for = "unix"}]
 extract = [{run = 'unzip $@"', desc = "Extract here", for = "unix"}]
 play = [{run = 'mpv --force-window "$@"', orphan = true, for = "unix"}]

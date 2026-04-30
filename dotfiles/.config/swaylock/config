@@ -7,28 +7,28 @@ timestr=%H:%M
 datestr=%A, %d %B
 font=monospace
 
-color=141118cc
-inside-color=14111800
-inside-clear-color=14111800
-inside-ver-color=a784afcc
-inside-wrong-color=c099d3cc
+color=331b21cc
+inside-color=331b2100
+inside-clear-color=331b2100
+inside-ver-color=777894cc
+inside-wrong-color=323344cc
 
-ring-color=96899dff
-ring-clear-color=d8adfcff
-ring-ver-color=a784afff
-ring-wrong-color=c099d3ff
+ring-color=65656bff
+ring-clear-color=326567ff
+ring-ver-color=777894ff
+ring-wrong-color=4bb0abff
 
 line-color=00000000
-text-color=e9dbf0ff
-text-clear-color=d8adfcff
-text-ver-color=a784afff
-text-wrong-color=c099d3ff
+text-color=b7b8beff
+text-clear-color=326567ff
+text-ver-color=777894ff
+text-wrong-color=b7b8beff
 
-key-hl-color=d8adfcff
-bs-hl-color=c099d3ff
+key-hl-color=326567ff
+bs-hl-color=323344ff
 separator-color=00000000
 
-indicator-radius=80
-indicator-thickness=8
+indicator-radius=150
+indicator-thickness=15
 ignore-empty-password
 show-failed-attempts
