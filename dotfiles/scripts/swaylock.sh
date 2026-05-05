@@ -11,8 +11,10 @@ bg=$(strip "$bg")
 fg=$(strip "$fg")
 c1=$(strip "$color1")
 c2=$(strip "$color2")
+c3=$(strip "$color3")
 c4=$(strip "$color4")
 c5=$(strip "$color5")
+c13=$(strip "$color13")
 c8=$(strip "$color8")
 
  
@@ -32,7 +34,7 @@ inside-clear-color=${bg}00
 inside-ver-color=${c4}cc
 inside-wrong-color=${c1}cc
 
-ring-color=${c8}ff
+ring-color=${c3}ff
 ring-clear-color=${c2}ff
 ring-ver-color=${c4}ff
 ring-wrong-color=${c5}ff

@@ -12,6 +12,8 @@ export VISUAL=nvim
 alias ls="ls --color=auto"
 alias bye="exit"
 alias nv="nvim"
+alias parrot="curl ascii.live/parrot"
+alias gpush="~/scripts/backup_git.sh"
 
 shopt -s expand_aliases
 shopt -s histappend
