@@ -10,7 +10,6 @@ export VISUAL=nvim
 
 
 alias ls="ls --color=auto"
-alias bye="exit"
 alias nv="nvim"
 alias parrot="curl ascii.live/parrot"
 alias gpush="~/scripts/backup_git.sh"
@@ -24,5 +23,4 @@ shopt -s autocd
 HISTFILESIZE=2000
 
 eval "$(starship init bash)"
-source $HOME/stow/dotfiles/.direnv_init.sh
 

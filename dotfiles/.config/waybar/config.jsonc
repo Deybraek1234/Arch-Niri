@@ -44,7 +44,7 @@
 		"format-disconnected": "󰤫  Disconnected",
 		"format-disabled": "󰤭 Disabled",
 		"max-length": 50,
-		"on-click": "kitty --class impala impala",
+		"on-click": "kitty --title impala impala",
 		"format-icons": [
 			"󰤯 ",
 			"󰤟 ",
