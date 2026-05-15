@@ -60,15 +60,15 @@ layout {
 	// WAL_COLORS_START
 focus-ring {
     width 1
-    active-color "#5F6A7C"
-    inactive-color "#76A6AD"
+    active-color "#924D5F"
+    inactive-color "#65656B"
 }
 
 border {
     off
     width 2
-    active-color "#5F6A7C"
-    inactive-color "#3D3E46"
+    active-color "#924D5F"
+    inactive-color "#362225"
 }
 // WAL_COLORS_END
 }
@@ -157,7 +157,8 @@ window-rule {
 }
 window-rule {
     match app-id="Matplotlib"
-    open-floating true
+    open-floating false
+    open-maximized true
 }
 
 window-rule {

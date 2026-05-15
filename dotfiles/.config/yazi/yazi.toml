@@ -33,9 +33,9 @@ code = [{run = 'code "$@"', block = false, desc = "Open VS code", for ="unix"}]
 [open]
 rules = [
     { mime = "image/*", use = ["wp", "open", "reveal"] },
-    { name = "*/", use = ["edit", "open", "reveal"] },
-    { name = "*.tex", use = ["code", "reveal"]},
-    { name = "*.cxx", use = ["code", "reveal"]},
+    { mime = "*/", use = ["edit", "open", "reveal"] },
+    { mime = "*.tex", use = ["code", "reveal"]},
+    { mime = "*.cxx", use = ["code", "reveal"]},
     { mime = "text/*", use = ["edit", "reveal", "code"] },
     { mime = "{audio,video}/*", use = ["play", "reveal"] },
     { mime = "application/{zip,rar,7z*}", use = ["extract", "reveal"]},
@@ -43,7 +43,7 @@ rules = [
     { mime = "*/javascript", use = ["edit", "reveal"] },
     { mime = "application/{json,ndjson}", use = ["edit", "reveal"] },
     { mime = "*/javascript", use = ["edit", "reveal"] },
-    { name = "*", use = ["edit", "open", "reveal"] },
+    { mime = "*", use = ["edit", "open", "reveal"] },
 ]
 
 
