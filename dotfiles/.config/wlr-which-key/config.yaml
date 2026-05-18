@@ -1,0 +1,17 @@
+background: "#282828"
+color: "#A6A4B3"
+border: "#F5A063"
+
+menu:
+  - key: "l"
+    desc: Lock
+    cmd: swaylock
+  - key: "p"
+    desc: Power off monitor and suspend
+    cmd: swaylock & systemctl suspend-then-hibernate
+  - key: "h"
+    desc: Hibernate
+    cmd: systemctl hibernate
+  - key: "s"
+    desc: Shutdown
+    cmd: systemctl poweroff

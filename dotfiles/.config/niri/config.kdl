@@ -60,15 +60,15 @@ layout {
 	// WAL_COLORS_START
 focus-ring {
     width 1
-    active-color "#924D5F"
-    inactive-color "#65656B"
+    active-color "#F5A063"
+    inactive-color "#74737D"
 }
 
 border {
     off
     width 2
-    active-color "#924D5F"
-    inactive-color "#362225"
+    active-color "#F5A063"
+    inactive-color "#464252"
 }
 // WAL_COLORS_END
 }
@@ -217,8 +217,7 @@ binds {
     Mod+W {spawn "kitty" "--title" "impala" "impala"; }
 
 
-    Ctrl+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-    Ctrl+Shift+L {spawn-sh "swaylock & systemctl suspend-then-hibernate" ;} 
+    Ctrl+L hotkey-overlay-title="Wlr-which-key power menu" { spawn "wlr-which-key"; }
     Mod+B hotkey-overlay-title="Open Firefox" {spawn "firefox"; }
     Mod+D {spawn-sh "$HOME/scripts/change_wallpaper.sh 'random'"; }
     Mod+Shift+D {spawn-sh "kitty --class wallpaper yazi $HOME/Pictures/wallpaper"; }

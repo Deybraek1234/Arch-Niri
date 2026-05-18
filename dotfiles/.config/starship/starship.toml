@@ -1,5 +1,5 @@
 format = """
-[](fg:#924D5F)[ ](bg:#924D5F fg:#ffffff)$directory[](bg:#65656B fg:#924D5F)$username[](bg:#F57993 fg:#65656B)$hostname[](fg:#F57993)$cmd_duration$jobs$git_branch$git_metrics$git_status$fill$time$line_break$character
+[](fg:#F5A063)[ ](bg:#F5A063 fg:#ffffff)$directory[](bg:#74737D fg:#F5A063)$username[](bg:#923E60 fg:#74737D)$hostname[](fg:#923E60)$cmd_duration$jobs$git_branch$git_metrics$git_status$fill$time$line_break$character
 """
 
 command_timeout = 2000
@@ -7,14 +7,14 @@ scan_timeout = 500
 add_newline = true
 
 [character]
-success_symbol = "[λ](bold #4BB0AB)"
-error_symbol = "[Δ](bold #F57993)"
+success_symbol = "[λ](bold #EC667D)"
+error_symbol = "[Δ](bold #923E60)"
 
 [directory]
 truncation_length = 3
 truncation_symbol = ".../"
 read_only = "  "
-style = "bg:#924D5F fg:#ffffff"
+style = "bg:#F5A063 fg:#ffffff"
 format = "[ $path ]($style)"
 
 [fill]
@@ -26,7 +26,7 @@ format = "[   $duration ](bold #ffffff)"
 
 [hostname]
 ssh_only = false
-style = "bg:#F57993 fg:#ffffff"
+style = "bg:#923E60 fg:#ffffff"
 format = "[ $hostname ]($style)"
 
 [git_branch]
@@ -40,8 +40,8 @@ format = "[$symbol$number](bold #ffffff)"
 
 [username]
 show_always = true
-style_user = "bg:#65656B fg:#ffffff"
-style_root = "bg:#323344 fg:#909199"
+style_user = "bg:#74737D fg:#ffffff"
+style_root = "bg:#5D5A77 fg:#A6A4B3"
 format = "[ $user ]($style)"
 
 [time]
@@ -54,7 +54,7 @@ utc_time_offset = "local"
 [sudo]
 symbol = " 󰐼 "
 disabled = false
-format = "[$symbol](bold #F57993)"
+format = "[$symbol](bold #923E60)"
 
 [line_break]
 disabled = false

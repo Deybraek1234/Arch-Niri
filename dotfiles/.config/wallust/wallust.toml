@@ -55,6 +55,7 @@ niri = {template = "colors-niri.sh", target = "~/.config/niri/niri-colors.sh"}
 mako = { template = "colors-mako.sh", target = "~/.config/mako/mako-colors.sh" }
 swaylock = { template = "swaylock.template", target = "~/.config/swaylock/colors" }
 starship = { template = "starship-colors", target = "~/.config/starship/starship-colors" }
+wlr-which-key = { template ="wlr-which-key-config.yaml", target = "~/.config/wlr-which-key/config.yaml" }
 
 [hooks]
 # Run commands when wallust is invoked. Useful to avoid scripting.
