@@ -40,7 +40,7 @@ margin-right: 1px
 }
 
 #idle_inhibitor.activated{
-	color:@color15;
+	color:white;
 }
 
 #group-expand{

@@ -168,7 +168,7 @@
 
 	"idle_inhibitor":{
 		"format":"<big>  </big>",
-		"timeout":120.0,
+		"timeout":240.0,
 		"tooltip":false
 	},
 
