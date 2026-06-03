@@ -72,15 +72,15 @@ layout {
 	// WAL_COLORS_START
 focus-ring {
     width 1
-    active-color "#6F8088"
-    inactive-color "#535D63"
+    active-color "#9763DC"
+    inactive-color "#545B67"
 }
 
 border {
     off
     width 2
-    active-color "#6F8088"
-    inactive-color "#4A432D"
+    active-color "#9763DC"
+    inactive-color "#110427"
 }
 // WAL_COLORS_END
 }

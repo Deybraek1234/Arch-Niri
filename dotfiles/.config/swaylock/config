@@ -7,25 +7,25 @@ timestr=%H:%M
 datestr=%A, %d %B
 font=monospace
 
-color=3f1007cc
-inside-color=3f100700
-inside-clear-color=3f100700
-inside-ver-color=6f8088cc
-inside-wrong-color=001b2dcc
+color=000f52cc
+inside-color=000f5200
+inside-clear-color=000f5200
+inside-ver-color=9763dccc
+inside-wrong-color=011537cc
 
-ring-color=04558aff
-ring-clear-color=484131ff
-ring-ver-color=6f8088ff
-ring-wrong-color=624291ff
+ring-color=0da3e5ff
+ring-clear-color=aaadf5ff
+ring-ver-color=9763dcff
+ring-wrong-color=016393ff
 
 line-color=00000000
-text-color=a6afb6ff
-text-clear-color=484131ff
-text-ver-color=6f8088ff
-text-wrong-color=a6afb6ff
+text-color=a6adb9ff
+text-clear-color=aaadf5ff
+text-ver-color=9763dcff
+text-wrong-color=a6adb9ff
 
-key-hl-color=484131ff
-bs-hl-color=001b2dff
+key-hl-color=aaadf5ff
+bs-hl-color=011537ff
 separator-color=00000000
 
 indicator-radius=150
