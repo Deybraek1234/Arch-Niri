@@ -33,6 +33,12 @@ input {
 	focus-follows-mouse max-scroll-amount="0%"
 }
 
+gestures {
+  hot-corners {
+   off 
+  }
+}
+
 environment {
 	ELECTRON_OZONE_PLATFORM_HINT "wayland"
 }
@@ -72,15 +78,15 @@ layout {
 	// WAL_COLORS_START
 focus-ring {
     width 1
-    active-color "#9763DC"
-    inactive-color "#545B67"
+    active-color "#7C98D1"
+    inactive-color "#5D6061"
 }
 
 border {
     off
     width 2
-    active-color "#9763DC"
-    inactive-color "#110427"
+    active-color "#7C98D1"
+    inactive-color "#443446"
 }
 // WAL_COLORS_END
 }

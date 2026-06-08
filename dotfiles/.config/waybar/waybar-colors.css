@@ -8,23 +8,23 @@ waybar = { src = "waybar-colors.css", dst = "~/.config/waybar/colors.css" }
 @import url("colors.css");
  */
 
-@define-color cursor #5488A6;
+@define-color cursor #64B0AC;
 @define-color background #000000;
-@define-color foreground #A6ADB9;
-@define-color color0  #110427;
-@define-color color1  #011537;
-@define-color color2  #AAADF5;
-@define-color color3  #0DA3E5;
-@define-color color4  #AC82E3;
-@define-color color5  #016393;
-@define-color color6  #002BEA;
-@define-color color7  #778293;
-@define-color color8  #545B67;
-@define-color color9  #011537;
-@define-color color10 #AAADF5;
-@define-color color11 #0DA3E5;
-@define-color color12 #9763DC;
-@define-color color13 #016393;
-@define-color color14 #3355EE;
-@define-color color15 #778293;
+@define-color foreground #B0B2B3;
+@define-color color0  #443446;
+@define-color color1  #1C2427;
+@define-color color2  #68776D;
+@define-color color3  #532B63;
+@define-color color4  #96ADDA;
+@define-color color5  #18AEA5;
+@define-color color6  #B85BCA;
+@define-color color7  #85898A;
+@define-color color8  #5D6061;
+@define-color color9  #1C2427;
+@define-color color10 #68776D;
+@define-color color11 #532B63;
+@define-color color12 #7C98D1;
+@define-color color13 #18AEA5;
+@define-color color14 #C67CD5;
+@define-color color15 #85898A;
 
