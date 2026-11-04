@@ -1,6 +1,6 @@
 background: "#282828"
-color: "#9A949A"
-border: "#935C5B"
+color: "#9D9083"
+border: "#ADC62B"
 
 menu:
   - key: "l"
@@ -15,3 +15,6 @@ menu:
   - key: "s"
     desc: Shutdown
     cmd: systemctl poweroff
+  - key: "b"
+    desc: Toggle Brightness
+    cmd: pkill -x gammastep || gammastep -O 6500 -b 0.5 &

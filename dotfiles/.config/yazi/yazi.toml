@@ -24,11 +24,11 @@ image_quality = 75
 
 
 [opener]
-wp = [{ run = '/home/franci/scripts/change_wallpaper.sh "$@"', desc = "Change wallpaper", for = "linux"}]
-edit = [{run = 'nvim "$@"', desc = "Neovim", block = true, for = "unix"}]
-extract = [{run = 'unar "$@"', block = true, desc = "Extract here", for = "unix"}]
-play = [{run = 'mpv --force-window "$@"', orphan = true, for = "unix"}]
-code = [{run = 'code "$@"', block = false, desc = "Open VS code", for ="unix"}]
+wp = [{ run = '$HOME/scripts/change_wallpaper.sh %s', desc = "Change wallpaper", for = "linux"}]
+edit = [{run = 'nvim %s', desc = "Neovim", block = true, for = "unix"}]
+extract = [{run = 'unar %s', block = true, desc = "Extract here", for = "unix"}]
+play = [{run = 'vlc %S', orphan = true, for = "unix"}]
+code = [{run = 'code %s', block = false, desc = "Open VS code", for ="unix"}]
 
 [open]
 rules = [

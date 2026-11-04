@@ -10,7 +10,7 @@ input {
 	keyboard {
 		xkb {
 			layout "us"
-			variant "dvorak"
+        variant "dvorak"
 			options "compose:ralt"
 		}
 		repeat-delay 500
@@ -78,15 +78,15 @@ layout {
 	// WAL_COLORS_START
 focus-ring {
     width 1
-    active-color "#935C5B"
-    inactive-color "#6C676C"
+    active-color "#ADC62B"
+    inactive-color "#6E655C"
 }
 
 border {
     off
     width 2
-    active-color "#935C5B"
-    inactive-color "#170C1B"
+    active-color "#ADC62B"
+    inactive-color "#000400"
 }
 // WAL_COLORS_END
 }

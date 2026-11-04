@@ -15,3 +15,6 @@ menu:
   - key: "s"
     desc: Shutdown
     cmd: systemctl poweroff
+  - key: "b"
+    desc: Toggle Brightness
+    cmd: pkill -x gammastep || gammastep -O 6500 -b 0.5 &
